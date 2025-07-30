@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekking.app.controller.EmergencyLogController">
+    <content>
+        <VBox spacing="10.0" styleClass="dashboard-content-panel">
+            <children>
+                <Label text="Emergency Incident Log" styleClass="section-title" />
+                <TableView fx:id="emergencyLogTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="timestampCol" prefWidth="175.0" text="Date/Time" />
+                        <TableColumn fx:id="bookingIdCol" prefWidth="100.0" text="Booking ID" />
+                        <TableColumn fx:id="touristNameCol" prefWidth="150.0" text="Tourist Name" />
+                        <TableColumn fx:id="descriptionCol" prefWidth="400.0" text="Description" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </content>
+</ScrollPane>

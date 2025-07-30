@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekking.app.controller.AdminManageFestivalsController">
+    <content>
+        <VBox spacing="20.0" styleClass="dashboard-content-panel">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+            <children>
+                <Label text="Manage Festival Offers" styleClass="section-title"/>
+                <TableView fx:id="offersTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="festivalNameCol" prefWidth="200.0" text="Festival Name"/>
+                        <TableColumn fx:id="startDateCol" prefWidth="120.0" text="Start Date"/>
+                        <TableColumn fx:id="endDateCol" prefWidth="120.0" text="End Date"/>
+                        <TableColumn fx:id="discountCol" prefWidth="100.0" text="Discount"/>
+                    </columns>
+                </TableView>
+
+                <Button fx:id="deleteOfferButton" text="Delete Selected Offer" styleClass="button-secondary"/>
+
+                <VBox spacing="10" styleClass="card-panel">
+                    <Label text="Add New Offer" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="40.0"/>
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0"/>
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0"/>
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0"/>
+                        </columnConstraints>
+                        <Label text="Festival Name" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="festivalNameField" promptText="e.g., Dashain 2025" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label text="Start Date" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <DatePicker fx:id="startDatePicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="End Date" styleClass="form-label" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        <DatePicker fx:id="endDatePicker" maxWidth="Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <Label text="Discount (%)" styleClass="form-label" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                        <TextField fx:id="discountField" promptText="e.g., 15" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    </GridPane>
+                    <HBox alignment="CENTER_RIGHT">
+                        <Button fx:id="addOfferButton" text="Add Offer" styleClass="button-primary"/>
+                    </HBox>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
