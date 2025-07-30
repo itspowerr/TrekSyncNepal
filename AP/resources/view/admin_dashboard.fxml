@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekking.app.controller.AdminDashboardController" styleClass="root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="header-bar">
+            <padding><Insets left="10" right="10" /></padding>
+            <Label styleClass="app-title" text="Trek Sync Nepal" />
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button onAction="#showOverview" styleClass="nav-button" text="Overview" />
+            <Button onAction="#showTouristRegistration" styleClass="nav-button" text="Tourists" />
+            <Button onAction="#showGuideRegistration" styleClass="nav-button" text="Guides" />
+            <Button onAction="#showAttractions" styleClass="nav-button" text="Attractions" />
+            <Button onAction="#showBooking" styleClass="nav-button" text="Bookings" />
+            <Button onAction="#showFestivalOffers" styleClass="nav-button" text="Festivals" />
+            <Button onAction="#showAdminManagement" styleClass="nav-button" text="Admins" />
+            <Button onAction="#showEmergencyLog" styleClass="nav-button" text="Emergency Log" />
+            <Button onAction="#showReports" styleClass="nav-button" text="Reports" />
+
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" spacing="10">
+                <HBox alignment="CENTER" spacing="5">
+                    <ImageView fx:id="headerWeatherIcon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                    <Label fx:id="headerWeatherLabel" style="-fx-font-weight: bold;" text="--°C" />
+                </HBox>
+                <Label styleClass="label" text="|" />
+                <Label fx:id="loggedInUserLabel" styleClass="label" text="User: admin" />
+                <Label styleClass="label" text="|" />
+                <Label styleClass="label" text="Language" />
+                <ChoiceBox fx:id="languageChoice" styleClass="choice-box" />
+                <CheckBox fx:id="darkModeToggle" styleClass="check-box" text="Dark Mode" />
+            </HBox>
+            <Button onAction="#handleLogoutButtonAction" styleClass="button-secondary" text="Logout" />
+        </HBox>
+    </top>
+    <center>
+        <TabPane fx:id="adminTabPane" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="overviewTab" text="Overview"><content><fx:include fx:id="overviewContent" source="admin-overview.fxml" /></content></Tab>
+                <Tab fx:id="touristTab" text="Tourists"><content><fx:include fx:id="touristContent" source="admin-manage-tourists.fxml" /></content></Tab>
+                <Tab fx:id="guideTab" text="Guides"><content><fx:include fx:id="guideContent" source="admin-manage-guides.fxml" /></content></Tab>
+                <Tab fx:id="attractionTab" text="Attractions"><content><fx:include fx:id="attractionContent" source="admin-manage-attractions.fxml" /></content></Tab>
+                <Tab fx:id="bookingTab" text="Bookings"><content><fx:include fx:id="bookingContent" source="admin-booking.fxml" /></content></Tab>
+                <Tab fx:id="festivalTab" text="Festivals"><content><fx:include fx:id="festivalContent" source="admin-manage-festivals.fxml" /></content></Tab>
+                <Tab fx:id="adminTab" text="Manage Admins"><content><fx:include fx:id="adminContent" source="admin-manage-admins.fxml" /></content></Tab>
+                <Tab fx:id="emergencyTab" text="Emergency Log"><content><fx:include fx:id="emergencyContent" source="admin-emergency-log.fxml" /></content></Tab>
+                <Tab fx:id="reportsTab" text="Reports"><content><fx:include fx:id="reportsContent" source="admin-reports.fxml" /></content></Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekking.app.controller.AdminOverviewController">
+    <content>
+        <VBox spacing="20.0" styleClass="dashboard-content-panel">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label text="Dashboard Overview" styleClass="section-title" />
+
+                <GridPane hgap="15.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                    </columnConstraints>
+                    <children>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="0">
+                            <Label text="TOTAL TOURISTS" styleClass="finance-stat-title"/>
+                            <Label fx:id="touristCountLabel" text="0" styleClass="finance-stat-value"/>
+                        </VBox>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="1">
+                            <Label text="TOTAL GUIDES" styleClass="finance-stat-title"/>
+                            <Label fx:id="guideCountLabel" text="0" styleClass="finance-stat-value"/>
+                        </VBox>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="2">
+                            <Label text="TOTAL ATTRACTIONS" styleClass="finance-stat-title"/>
+                            <Label fx:id="attractionCountLabel" text="0" styleClass="finance-stat-value"/>
+                        </VBox>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="3">
+                            <Label text="TOTAL ADMINS" styleClass="finance-stat-title"/>
+                            <Label fx:id="adminCountLabel" text="0" styleClass="finance-stat-value"/>
+                        </VBox>
+                    </children>
+                </GridPane>
+
+                <VBox spacing="20.0">
+                    <padding><Insets top="20.0" /></padding>
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <Label text="Financial Snapshot" styleClass="section-title" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ToggleButton fx:id="last7DaysButton" text="Last 7 Days" selected="true">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="periodToggleGroup" />
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="last30DaysButton" text="Last 30 Days" toggleGroup="$periodToggleGroup" />
+                    </HBox>
+                    <GridPane hgap="20.0" vgap="20.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                        </columnConstraints>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="0">
+                            <Label text="TOTAL REVENUE" styleClass="finance-stat-title" />
+                            <Label fx:id="totalRevenueLabel" text="\$0.00" styleClass="finance-stat-value" />
+                        </VBox>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="1">
+                            <Label text="PAID BOOKINGS (PERIOD)" styleClass="finance-stat-title" />
+                            <Label fx:id="paidBookingsLabel" text="0" styleClass="finance-stat-value" />
+                        </VBox>
+                        <VBox styleClass="finance-stat-card" GridPane.columnIndex="2">
+                            <Label text="AVG. BOOKING VALUE" styleClass="finance-stat-title" />
+                            <Label fx:id="avgBookingValueLabel" text="\$0.00" styleClass="finance-stat-value" />
+                        </VBox>
+                    </GridPane>
+                    <VBox styleClass="card-panel" VBox.vgrow="ALWAYS">
+                        <Label text="Revenue Over Time" styleClass="section-title" />
+                        <AreaChart fx:id="revenueChart" legendVisible="false" VBox.vgrow="ALWAYS">
+                            <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                            <yAxis><NumberAxis side="LEFT" /></yAxis>
+                        </AreaChart>
+                    </VBox>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

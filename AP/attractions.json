@@ -1,0 +1,44 @@
+[
+  {
+    "attractionId": "87d45f16-df02-42d0-ae9f-18d580f65cb0",
+    "name": "Everest",
+    "type": "Trek",
+    "altitude": 5364,
+    "price": 2000.0
+  },
+  {
+    "attractionId": "7bba67b8-007b-4fa1-a2d8-3165dd9e53f5",
+    "name": "Annapurna",
+    "type": "Trek",
+    "altitude": 2999,
+    "price": 1500.0
+  },
+  {
+    "attractionId": "10ee4ba8-42b6-4560-a50b-df6ca4e7311e",
+    "name": "Syangja",
+    "type": "Heritage",
+    "altitude": 100,
+    "price": 1000.0
+  },
+  {
+    "attractionId": "4cd82a7f-7096-4a09-9f5a-e3a49fd27c7f",
+    "name": "Pokhara",
+    "type": "Tour",
+    "altitude": 500,
+    "price": 1000.0
+  },
+  {
+    "attractionId": "cd793163-e846-49ed-a216-580022cacbb7",
+    "name": "Rara",
+    "type": "Trek",
+    "altitude": 500,
+    "price": 1300.0
+  },
+  {
+    "attractionId": "98771669-ce01-4cad-9901-f502ff1a13cf",
+    "name": "manang",
+    "type": "Trek",
+    "altitude": 1200,
+    "price": 1000.0
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "guideId": "f2713a6c-f60f-4131-8aca-e2860cbf887a",
+    "guideName": "Joshua Smith",
+    "languages": [
+      "Nepali",
+      "English",
+      "Japanese"
+    ],
+    "contact": "Joshua@smith.com",
+    "experienceYears": 5,
+    "assignedAttractionIds": [
+      "10ee4ba8-42b6-4560-a50b-df6ca4e7311e",
+      "cd793163-e846-49ed-a216-580022cacbb7",
+      "4cd82a7f-7096-4a09-9f5a-e3a49fd27c7f"
+    ]
+  },
+  {
+    "guideId": "255d24cf-b9dd-44ba-8cfd-99bdc1659ae5",
+    "guideName": "Monkey .D Luffy",
+    "languages": [
+      "Nepali",
+      "English",
+      "Japanese"
+    ],
+    "contact": "Luffy@monkey.com",
+    "experienceYears": 7,
+    "assignedAttractionIds": [
+      "10ee4ba8-42b6-4560-a50b-df6ca4e7311e",
+      "4cd82a7f-7096-4a09-9f5a-e3a49fd27c7f",
+      "98771669-ce01-4cad-9901-f502ff1a13cf"
+    ]
+  },
+  {
+    "guideId": "7bb049ad-276f-43fe-b4da-83e39de3888a",
+    "guideName": "Lelouch vi Britannia",
+    "languages": [
+      "Nepali",
+      "English",
+      "German",
+      "Japanese"
+    ],
+    "contact": "lelouch@britannia.com",
+    "experienceYears": 18,
+    "assignedAttractionIds": [
+      "7bba67b8-007b-4fa1-a2d8-3165dd9e53f5",
+      "cd793163-e846-49ed-a216-580022cacbb7"
+    ]
+  }
+]

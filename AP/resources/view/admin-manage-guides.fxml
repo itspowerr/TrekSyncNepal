@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+
+<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekking.app.controller.GuideRegistrationController">
+    <content>
+        <VBox spacing="20.0" styleClass="dashboard-content-panel">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label text="Manage Guides" styleClass="section-title" />
+                <TableView fx:id="guidesTable" prefHeight="150.0">
+                    <columns>
+                        <TableColumn fx:id="guideNameCol" prefWidth="150.0" text="Guide Name" />
+                        <TableColumn fx:id="contactCol" prefWidth="150.0" text="Contact" />
+                        <TableColumn fx:id="experienceCol" prefWidth="100.0" text="Experience (Yrs)" />
+                    </columns>
+                </TableView>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <Button fx:id="newGuideButton" text="Add New Guide" styleClass="button-primary" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="deleteButton" text="Delete Selected Guide" styleClass="button-secondary" />
+                </HBox>
+
+                <VBox fx:id="formPane" spacing="10" styleClass="card-panel">
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                    <Label fx:id="formTitleLabel" text="Add New Guide" styleClass="section-title" />
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="Guide Name" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="guideNameField" promptText="Enter full name" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label text="Contact Info" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <TextField fx:id="contactField" promptText="Enter email or phone" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="%years.of.experience.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <TextField fx:id="experienceField" promptText="e.g., 5" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        </children>
+                    </GridPane>
+                    <VBox spacing="10">
+                        <Label text="%languages.spoken.label" styleClass="form-label"/>
+                        <HBox spacing="15">
+                            <CheckBox fx:id="nepaliCheck" text="%nepali.label"/>
+                            <CheckBox fx:id="englishCheck" text="%english.label"/>
+                            <CheckBox fx:id="hindiCheck" text="%hindi.label"/>
+                            <CheckBox fx:id="germanCheck" text="%german.label"/>
+                            <CheckBox fx:id="frenchCheck" text="%french.label"/>
+                            <CheckBox fx:id="japaneseCheck" text="%japanese.label"/>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="5.0">
+                        <Label text="Assign Attractions to Guide" styleClass="form-label" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Label fx:id="assignedAttractionsLabel" styleClass="info-text" text="None" HBox.hgrow="ALWAYS" />
+                            <Button fx:id="manageAssignmentsButton" text="Manage..." />
+                        </HBox>
+                    </VBox>
+                    <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                        <Button fx:id="saveButton" text="Save Guide" styleClass="login-button"/>
+                    </HBox>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

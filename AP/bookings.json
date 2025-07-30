@@ -1,0 +1,26 @@
+[
+  {
+    "bookingId": "C65BDED8",
+    "touristName": "Zoro Roronoa",
+    "attractionName": "Rara",
+    "guideName": "Joshua Smith",
+    "bookingDate": "2025-07-30",
+    "startDate": "2025-07-31",
+    "status": "Confirmed",
+    "totalCost": 80000.0,
+    "paymentStatus": "Paid",
+    "discountApplied": "Tihar (20%)"
+  },
+  {
+    "bookingId": "A567D27D",
+    "touristName": "Zoro Roronoa",
+    "attractionName": "Pokhara",
+    "guideName": "Monkey .D Luffy",
+    "bookingDate": "2025-07-30",
+    "startDate": "2025-08-01",
+    "status": "Confirmed",
+    "totalCost": 12000.0,
+    "paymentStatus": "Paid",
+    "discountApplied": "Tihar (20%)"
+  }
+]

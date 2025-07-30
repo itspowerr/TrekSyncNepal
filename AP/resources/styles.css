@@ -1,0 +1,208 @@
+/* --- Root & Font Styling --- */
+.root {
+  -fx-background-color: #f8f9fa; /* A clean, light grey background */
+  -fx-font-family: -apple-system, "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  -fx-font-size: 14px;
+}
+
+.label {
+  -fx-text-fill: #212529;
+}
+
+.scroll-pane { -fx-background-color: transparent; }
+.scroll-pane > .viewport { -fx-background-color: #f8f9fa; }
+.scroll-pane .corner { -fx-background-color: transparent; }
+
+.login-container {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 16px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 8);
+  -fx-max-width: 480px;
+  -fx-padding: 40px;
+}
+.login-title {
+  -fx-font-size: 32px;
+  -fx-font-weight: 600;
+  -fx-text-fill: #212529;
+}
+
+.form-label {
+  -fx-font-size: 14px;
+  -fx-font-weight: 500;
+  -fx-text-fill: #495057;
+  -fx-padding: 0 0 5px 0;
+}
+.form-input, .text-field, .combo-box-base, .date-picker {
+  -fx-background-color: #f1f3f5;
+  -fx-border-color: #dee2e6;
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-padding: 12px;
+  -fx-font-size: 15px;
+  -fx-transition: all 0.2s ease-in-out;
+}
+.form-input:focused, .text-field:focused, .combo-box-base:focused, .date-picker:focused {
+  -fx-border-color: #17a2b8;
+  -fx-background-color: #ffffff;
+  -fx-effect: dropshadow(gaussian, rgba(23, 162, 184, 0.25), 8, 0, 0, 0);
+}
+.check-box .box {
+  -fx-border-color: #dee2e6;
+  -fx-background-radius: 4px;
+  -fx-border-radius: 4px;
+}
+.check-box:selected .box {
+  -fx-background-color: #17a2b8;
+}
+.check-box:selected .mark {
+  -fx-background-color: white;
+}
+
+.choice-box .context-menu, .combo-box-popup .list-view {
+  -fx-background-color: white;
+  -fx-border-color: #dee2e6;
+}
+.choice-box .menu-item:focused, .combo-box-popup .list-cell:hover {
+  -fx-background-color: #f1f3f5;
+}
+.combo-box-popup .list-cell:filled:selected {
+  -fx-background-color: #17a2b8;
+  -fx-text-fill: white;
+}
+
+.date-picker-popup {
+  -fx-border-color: #dee2e6;
+}
+.date-picker-popup .month-year-pane {
+  -fx-background-color: #f8f9fa;
+}
+.date-picker-popup .day-cell:hover {
+  -fx-background-color: #f1f3f5;
+}
+.date-picker-popup .day-cell:selected {
+  -fx-background-color: #17a2b8;
+  -fx-text-fill: white;
+}
+
+.button {
+  -fx-cursor: hand;
+  -fx-background-radius: 8px;
+  -fx-font-weight: bold;
+  -fx-padding: 12px 22px;
+  -fx-transition: all 0.2s ease-in-out;
+  -fx-background-color: #e9ecef;
+  -fx-text-fill: #212529;
+}
+.button:hover {
+  -fx-scale-y: 1.05;
+  -fx-scale-x: 1.05;
+}
+.login-button { -fx-background-color: linear-gradient(to right, #17a2b8, #138496); -fx-text-fill: white; }
+.button-primary { -fx-background-color: linear-gradient(to right, #28a745, #1e7e34); -fx-text-fill: white; }
+.button-secondary { -fx-background-color: linear-gradient(to right, #6c757d, #5a6268); -fx-text-fill: white; }
+.toggle-button {
+  -fx-background-color: #e9ecef;
+  -fx-text-fill: #495057;
+  -fx-padding: 8px 15px;
+}
+.toggle-button:selected {
+  -fx-background-color: #17a2b8;
+  -fx-text-fill: white;
+}
+
+.table-view {
+  -fx-border-color: #e9ecef;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+}
+.table-view .column-header-background { -fx-background-color: transparent; }
+.table-view .column-header { -fx-background-color: transparent; -fx-padding: 12px; }
+.table-view .column-header .label { -fx-text-fill: #495057; -fx-font-weight: bold; -fx-font-size: 13px; }
+.table-view .table-row-cell {
+  -fx-background-color: #ffffff;
+  -fx-border-color: transparent transparent #e9ecef transparent;
+  -fx-border-width: 1;
+  -fx-padding: 14px;
+}
+.table-view .table-row-cell:hover { -fx-background-color: #f8f9fa; }
+.table-view .table-row-cell:selected { -fx-background-color: #d1ecf1; }
+
+.header-bar {
+  -fx-background-color: white;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 0, 5);
+}
+.app-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #17a2b8; }
+.nav-button { -fx-background-color: transparent; -fx-text-fill: #495057; -fx-font-weight: 500; }
+.nav-button:hover { -fx-background-color: #e9ecef; }
+.card-panel {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 12px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 15, 0, 0, 5);
+  -fx-padding: 25px;
+}
+.section-title {
+  -fx-font-size: 20px;
+  -fx-font-weight: 600;
+  -fx-text-fill: #343a40;
+  -fx-padding-bottom: 15px;
+  -fx-border-color: transparent transparent #e9ecef transparent;
+  -fx-border-width: 1px;
+}
+
+.finance-stat-card {
+  -fx-background-color: #ffffff;
+  -fx-padding: 20px;
+  -fx-background-radius: 8px;
+  -fx-border-color: #e0e0e0;
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+}
+.finance-stat-title {
+  -fx-font-size: 13px;
+  -fx-text-fill: #6c757d;
+  -fx-font-weight: bold;
+  -fx-text-transform: uppercase;
+}
+.finance-stat-value {
+  -fx-font-size: 28px;
+  -fx-text-fill: #212529;
+  -fx-font-weight: 600;
+}
+.area-chart .chart-series-area-fill {
+  -fx-fill: linear-gradient(to top, rgba(23, 162, 184, 0.1), rgba(23, 162, 184, 0.6));
+}
+.area-chart .chart-series-area-line {
+  -fx-stroke: #17a2b8;
+  -fx-stroke-width: 2px;
+}
+.axis {
+  -fx-tick-label-fill: #6c757d;
+}
+
+.pie-chart { -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); }
+.data0.chart-pie { -fx-pie-color: #ff8c00; }
+.data1.chart-pie { -fx-pie-color: #28a745; }
+.data2.chart-pie { -fx-pie-color: #dc3545; }
+.chart-pie-label { -fx-fill: white; -fx-font-weight: bold; }
+.chart-title { -fx-font-size: 1.2em; -fx-text-fill: #34495e; }
+.chart-legend {
+  -fx-padding: 20px;
+  -fx-background-color:  #fdfdfd;
+  -fx-border-color: #e0e0e0;
+  -fx-border-radius: 6px;
+}
+
+/* --- WEATHER PANEL --- */
+.weather-panel .temperature-label {
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #212529;
+}
+.weather-panel .description-label {
+  -fx-text-fill: #6c757d;
+}
+.weather-panel .details-label {
+  -fx-text-fill: #495057;
+}

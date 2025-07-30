@@ -1,0 +1,30 @@
+[
+  {
+    "username": "John",
+    "password": "123",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "John@smith.com",
+    "phoneNumber": "654987321",
+    "nationality": "USA",
+    "passportNumber": "987654231",
+    "dateOfBirth": "2025-07-21",
+    "gender": "Male",
+    "emergencyContactName": "",
+    "emergencyContactNumber": ""
+  },
+  {
+    "username": "Zoro",
+    "password": "123",
+    "firstName": "Zoro",
+    "lastName": "Roronoa",
+    "email": "zoro@islost.com",
+    "phoneNumber": "123456789",
+    "nationality": "Other",
+    "passportNumber": "123456789",
+    "dateOfBirth": "2025-07-06",
+    "gender": "Male",
+    "emergencyContactName": "",
+    "emergencyContactNumber": ""
+  }
+]

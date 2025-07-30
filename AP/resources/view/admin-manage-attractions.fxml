@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" styleClass="dashboard-content-panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekking.app.controller.AttractionsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label text="Manage Attractions" styleClass="section-title" />
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TableView fx:id="attractionsTable" HBox.hgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="attractionNameCol" prefWidth="200.0" text="Attraction Name" />
+                        <TableColumn fx:id="typeCol" prefWidth="150.0" text="Type" />
+                        <TableColumn fx:id="altitudeCol" prefWidth="100.0" text="Altitude (m)" />
+                        <TableColumn fx:id="priceCol" prefWidth="100.0" text="Price" />
+                    </columns>
+                </TableView>
+
+                <VBox minWidth="400.0" spacing="20.0">
+                    <children>
+                        <VBox fx:id="formPane" spacing="10" styleClass="card-panel">
+                            <Label fx:id="formTitleLabel" text="Add New Attraction" styleClass="section-title" />
+                            <HBox alignment="BOTTOM_LEFT" spacing="15.0">
+                                <VBox>
+                                    <Label text="Attraction Name" styleClass="form-label" />
+                                    <TextField fx:id="nameField" promptText="e.g., Everest Base Camp" />
+                                </VBox>
+                                <VBox>
+                                    <Label text="Type" styleClass="form-label" />
+                                    <TextField fx:id="typeField" promptText="e.g., Trek, Tour" />
+                                </VBox>
+                            </HBox>
+                            <HBox alignment="BOTTOM_LEFT" spacing="15.0">
+                                <VBox>
+                                    <Label text="Altitude (in meters)" styleClass="form-label" />
+                                    <TextField fx:id="altitudeField" promptText="e.g., 5364" />
+                                </VBox>
+                                <VBox>
+                                    <Label text="Price ($)" styleClass="form-label" />
+                                    <TextField fx:id="priceField" promptText="e.g., 1500.00" />
+                                </VBox>
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                                <Button fx:id="deleteButton" text="Delete Selected" styleClass="button-secondary" />
+                                <Button fx:id="clearButton" text="New / Clear" />
+                                <Button fx:id="saveButton" text="Save Attraction" styleClass="button-primary" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox fx:id="weatherPanel" spacing="10" styleClass="card-panel, weather-panel" visible="false">
+                            <Label fx:id="weatherCityLabel" styleClass="section-title" text="Weather in..." />
+                            <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                <ImageView fx:id="weatherIconView" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                                <VBox>
+                                    <Label fx:id="temperatureLabel" styleClass="temperature-label" text="--°C" />
+                                    <Label fx:id="weatherDescriptionLabel" styleClass="description-label" text="Loading..." />
+                                </VBox>
+                            </HBox>
+                            <GridPane hgap="10" vgap="3.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                </columnConstraints>
+                                <children>
+                                    <Label text="Feels Like:" styleClass="form-label, details-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                                    <Label fx:id="feelsLikeLabel" text="--°C" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                                    <Label text="Humidity:" styleClass="form-label, details-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                                    <Label fx:id="humidityLabel" text="--%" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                    <Label text="Wind:" styleClass="form-label, details-label" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                                    <Label fx:id="windSpeedLabel" text="-- m/s" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                </children>
+                            </GridPane>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>
