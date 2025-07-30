@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Alert?>
+<?import javafx.scene.control.Alert.AlertType?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekking.app.TouristRegistrationController"> <!-- ADDED CONTROLLER -->
+    <content>
+        <VBox spacing="20.0" styleClass="dashboard-content-panel">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <!-- Alert/Banner Section -->
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="info-banner">
+                    <Label text="%festival.discount.alert" styleClass="info-banner-text"/>
+                </HBox>
+
+                <!-- Personal Information Section -->
+                <VBox spacing="10" styleClass="card-panel">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="%personal.information.title" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="%first.name.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField promptText="%first.name.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label text="%last.name.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <TextField promptText="%last.name.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                            <Label text="%email.address.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <TextField promptText="%email.address.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label text="%phone.number.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <TextField promptText="%phone.number.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                            <Label text="%nationality.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <ComboBox fx:id="nationalityComboBox" promptText="%select.nationality.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="5" /> <!-- ADDED fx:id -->
+                            <Label text="%passport.number.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <TextField promptText="%passport.number.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                            <Label text="%date.of.birth.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                            <DatePicker promptText="%date.format.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                            <Label text="%gender.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            <ComboBox fx:id="genderComboBox" promptText="%select.gender.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="7" /> <!-- ADDED fx:id -->
+                        </children>
+                    </GridPane>
+                </VBox>
+
+                <!-- Trip Details Section -->
+                <VBox spacing="10" styleClass="card-panel">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="%trip.details.title" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="%booking.date.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <DatePicker promptText="%date.format.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label text="%trip.type.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="tripTypeComboBox" promptText="%select.trip.type.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" /> <!-- ADDED fx:id -->
+
+                            <Label text="%group.size.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <TextField text="1" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label text="%preferred.language.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="preferredLanguageComboBox" promptText="%select.language.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="3" /> <!-- ADDED fx:id -->
+                        </children>
+                    </GridPane>
+                </VBox>
+
+                <!-- Emergency Contact Section -->
+                <VBox spacing="10" styleClass="card-panel">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="%emergency.contact.title" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="%emergency.contact.name.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField promptText="%emergency.contact.name.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label text="%emergency.contact.number.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <TextField promptText="%emergency.contact.number.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="%relation.label" styleClass="form-label" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <TextField promptText="%relation.prompt" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        </children>
+                    </GridPane>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <Button text="%register.tourist.button" styleClass="login-button"/>
+                    <Button text="%clear.form.button" styleClass="button-secondary"/>
+                </HBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

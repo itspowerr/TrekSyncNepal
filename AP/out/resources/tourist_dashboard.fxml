@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.CheckBox?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="root"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.trekking.app.TouristDashboardController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="header-bar header-padding">
+            <Label text="%app.title" styleClass="app-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox alignment="CENTER" spacing="10">
+                <Label text="%language.label" styleClass="options-label" />
+                <ChoiceBox fx:id="languageChoice" styleClass="language-choice" />
+                <CheckBox fx:id="darkModeToggle" text="%dark.mode.toggle" styleClass="dark-mode-toggle" />
+            </HBox>
+            <Button text="%logout.button" onAction="#handleLogoutButtonAction" styleClass="button-secondary"/>
+        </HBox>
+
+        <Label fx:id="welcomeLabel" text="%welcome" styleClass="title">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button text="%book.tour" onAction="#bookTour" styleClass="button"/>
+        <Button text="%view.offers" onAction="#viewOffers" styleClass="button"/>
+        <Region VBox.vgrow="ALWAYS"/> <!-- Spacer to push logout button to bottom -->
+    </children>
+</VBox>

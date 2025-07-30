@@ -1,0 +1,421 @@
+/* General Root Styling for Dark Mode */
+.root {
+  -fx-background-color: linear-gradient(to bottom right, #2c3e50, #1a2a3a); /* Deep dark gradient */
+  -fx-font-family: "Arial", sans-serif;
+  -fx-font-size: 14px;
+}
+
+/* Logo Styling */
+.logo {
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.3), 10, 0, 0, 5); /* Soft glow effect */
+  -fx-padding: 0 0 20px 0; /* Space below logo */
+}
+
+/* Login Container (Card-like effect) in Dark Mode */
+.login-container {
+  -fx-background-color: #34495e; /* Darker background for the form */
+  -fx-background-radius: 15px;
+  -fx-border-radius: 15px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 20, 0, 0, 10); /* More pronounced shadow */
+  -fx-max-width: 450px;
+  -fx-padding: 40px;
+}
+
+/* Login Title in Dark Mode */
+.login-title {
+  -fx-font-size: 32px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ecf0f1; /* Light text */
+  -fx-padding-bottom: 10px;
+}
+
+/* Form Labels in Dark Mode */
+.form-label {
+  -fx-font-size: 16px;
+  -fx-text-fill: #ecf0f1; /* Ensured light text for better contrast */
+}
+
+/* Form Inputs (TextField, PasswordField, ComboBox, DatePicker, TextArea) in Dark Mode */
+.form-input {
+  -fx-background-color: #4a6072; /* Darker input background */
+  -fx-border-color: #6c7a89; /* Subtle border */
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-padding: 10px 15px;
+  -fx-font-size: 15px;
+  -fx-text-fill: #ecf0f1;
+}
+
+.form-input:focused {
+  -fx-border-color: #ff7043; /* Vibrant orange on focus (consistent) */
+  -fx-border-width: 2px;
+  -fx-effect: dropshadow(gaussian, rgba(255, 112, 67, 0.3), 10, 0, 0, 0);
+}
+
+/* Login Button in Dark Mode (consistent) */
+.login-button {
+  -fx-background-color: #ff7043; /* Vibrant orange */
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+  -fx-padding: 12px 30px;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(255, 112, 67, 0.4), 10, 0, 0, 5);
+}
+
+.login-button:hover {
+  -fx-background-color: #e65100; /* Darker orange on hover */
+  -fx-effect: dropshadow(gaussian, rgba(230, 81, 0, 0.5), 15, 0, 0, 8);
+}
+
+/* Options Bar (Language, Dark Mode) in Dark Mode */
+.options-bar {
+  -fx-padding-top: 15px;
+}
+
+.options-label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #ecf0f1; /* Ensured light text for better contrast */
+}
+
+.language-choice {
+  -fx-background-color: #4a6072;
+  -fx-border-color: #6c7a89;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+  -fx-font-size: 14px;
+  -fx-mark-color: #ff7043; /* Arrow color */
+}
+
+.language-choice .label {
+  -fx-text-fill: #ecf0f1; /* Ensured light text for the selected language in the ChoiceBox */
+}
+
+.dark-mode-toggle {
+  -fx-font-size: 14px;
+  -fx-text-fill: #ecf0f1; /* Ensured light text for better contrast */
+}
+
+/* General TableView styles (from previous) in Dark Mode */
+.table-view {
+  -fx-background-color: #34495e;
+  -fx-border-color: #7f8c8d;
+  -fx-border-radius: 5px;
+}
+
+/* Header Bar (from admin_dashboard) in Dark Mode */
+.header-bar {
+  -fx-background-color: #34495e; /* Darker background for the header */
+  -fx-border-color: #7f8c8d;
+  -fx-border-width: 0 0 1px 0; /* Bottom border */
+  -fx-padding: 10px; /* Padding for the header bar */
+}
+
+/* New: Secondary Button Style for Logout in Dark Mode */
+.button-secondary {
+  -fx-background-color: #7f8c8d; /* Darker greyish color */
+  -fx-text-fill: white;
+  -fx-padding: 10px 20px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}
+
+.button-secondary:hover {
+  -fx-background-color: #607d8b; /* Even darker grey on hover */
+}
+
+/* --- NEW DASHBOARD STYLES (DARK MODE) --- */
+
+/* Main App Title in Header */
+.app-title {
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ecf0f1;
+}
+
+/* Navigation Buttons in Header */
+.nav-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #ecf0f1; /* Changed to light text for better contrast */
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 8px 12px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}
+
+.nav-button:hover {
+  -fx-background-color: #4a6072;
+  -fx-text-fill: #ff7043;
+}
+
+/* Dashboard Content Panel (for each tab's content) */
+.dashboard-content-panel {
+  -fx-background-color: #2c3e50; /* Dark background for content area */
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 5);
+  -fx-padding: 20px;
+}
+
+/* Card-like Panels within Dashboard Content */
+.card-panel {
+  -fx-background-color: #34495e;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+  -fx-padding: 15px;
+}
+
+/* Section Titles within Cards */
+.section-title {
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ecf0f1;
+  -fx-padding-bottom: 10px;
+  -fx-border-color: #4a6072;
+  -fx-border-width: 0 0 1px 0;
+}
+
+/* Info Banner (e.g., Festival Discount) */
+.info-banner {
+  -fx-background-color: #5c6bc0; /* Darker blue/purple */
+  -fx-background-radius: 8px;
+  -fx-border-radius: 8px;
+  -fx-padding: 10px 15px;
+  -fx-alignment: CENTER_LEFT;
+}
+
+.info-banner-text {
+  -fx-font-size: 14px;
+  -fx-text-fill: #e8eaf6; /* Lighter text */
+  -fx-font-weight: bold;
+}
+
+/* Search Bar */
+.search-bar {
+  -fx-background-color: #34495e;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+  -fx-padding: 10px 15px;
+}
+
+/* Primary Button (for Search, New Booking, etc.) */
+.button-primary {
+  -fx-background-color: #64b5f6; /* Lighter Blue */
+  -fx-text-fill: white;
+  -fx-padding: 10px 20px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+  -fx-font-weight: bold;
+}
+
+.button-primary:hover {
+  -fx-background-color: #42a5f5; /* Darker blue */
+}
+
+/* TableView Header */
+.table-view .column-header-background {
+  -fx-background-color: #64b5f6; /* Lighter Blue header */
+  -fx-background-radius: 5px 5px 0 0;
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: white; /* Ensured white text for table headers */
+  -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+  -fx-alignment: CENTER_LEFT;
+  -fx-padding: 8px 10px;
+  -fx-text-fill: #ecf0f1; /* Light text for table cells */
+}
+
+.table-view .table-row-cell {
+  -fx-background-color: #34495e; /* Darker row background */
+}
+
+.table-view .table-row-cell:odd {
+  -fx-background-color: #3d566e; /* Slightly different odd row background */
+}
+
+/* Status Labels in Tables (Dark Mode) */
+.status-label-confirmed {
+  -fx-background-color: #81c784; /* Light Green */
+  -fx-text-fill: #1b5e20; /* Dark Green */
+}
+
+.status-label-pending {
+  -fx-background-color: #ffe082; /* Light Yellow */
+  -fx-text-fill: #fbc02d; /* Dark Yellow */
+}
+
+.status-label-cancelled {
+  -fx-background-color: #ef9a9a; /* Light Red */
+  -fx-text-fill: #c62828; /* Dark Red */
+}
+
+.status-label-high {
+  -fx-background-color: #ffcdd2; /* Light Red */
+  -fx-text-fill: #d32f2f; /* Dark Red */
+}
+
+.status-label-medium {
+  -fx-background-color: #ffe082; /* Light Orange */
+  -fx-text-fill: #fb8c00; /* Dark Orange */
+}
+
+.status-label-resolved {
+  -fx-background-color: #c8e6c9; /* Light Green */
+  -fx-text-fill: #388e3c; /* Dark Green */
+}
+
+.status-label-monitoring {
+  -fx-background-color: #bbdefb; /* Light Blue */
+  -fx-text-fill: #1976d2; /* Dark Blue */
+}
+
+.status-label-active {
+  -fx-background-color: #a5d6a7; /* Light Green */
+  -fx-text-fill: #2e7d32; /* Dark Green */
+}
+
+.status-label-maintenance {
+  -fx-background-color: #e0e0e0; /* Light Grey */
+  -fx-text-fill: #616161; /* Dark Grey */
+}
+
+/* Quick Statistics Cards */
+.stat-card {
+  -fx-background-color: #34495e;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+  -fx-padding: 15px;
+  -fx-alignment: CENTER;
+  -fx-spacing: 5px;
+}
+
+.stat-value {
+  -fx-font-size: 28px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #64b5f6; /* Lighter Blue */
+}
+
+.stat-label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #bdc3c7;
+}
+
+/* Specific Stat Card Colors (Dark Mode) */
+.stat-card-green .stat-value {
+  -fx-text-fill: #81c784;
+} /* Green */
+.stat-card-orange .stat-value {
+  -fx-text-fill: #ff7043;
+} /* Orange */
+.stat-card-red .stat-value {
+  -fx-text-fill: #ef5350;
+} /* Red */
+.stat-card-purple .stat-value {
+  -fx-text-fill: #ab47bc;
+} /* Purple */
+.stat-card-blue .stat-value {
+  -fx-text-fill: #64b5f6;
+} /* Blue */
+.stat-card-teal .stat-value {
+  -fx-text-fill: #4db6ac;
+} /* Teal */
+
+/* Star Rating */
+.star-rating {
+  -fx-font-size: 16px;
+  -fx-text-fill: #ffeb3b; /* Gold color for stars */
+}
+
+/* New styles for informational text in Dark Mode */
+.info-text,
+.info-text-small,
+.list-item-text {
+  -fx-text-fill: #ecf0f1; /* Ensured light text for readability on dark backgrounds */
+}
+
+.info-text-small {
+  -fx-font-size: 11px; /* Smaller font size as per original */
+}
+
+/* General text color for all Labels and Text nodes in dark mode */
+.root Label,
+.root Text {
+  -fx-text-fill: #ecf0f1; /* Default light text for all labels/text in dark mode */
+}
+
+/* ComboBox dropdown list cells in dark mode */
+.combo-box .list-cell {
+  -fx-background-color: #34495e; /* Dark background for list items */
+  -fx-text-fill: #ecf0f1; /* Light text for list items */
+}
+
+.combo-box .list-cell:filled:hover {
+  -fx-background-color: #4a6072; /* Darker hover background */
+}
+
+.combo-box .list-cell:filled:selected {
+  -fx-background-color: #64b5f6; /* Blue selected background */
+  -fx-text-fill: white;
+}
+
+/* DatePicker text field in dark mode */
+.date-picker .text-field {
+  -fx-text-fill: #ecf0f1; /* Ensure date text is light */
+}
+
+/* --- TabPane and Tab Styling for Dark Mode --- */
+.tab-pane {
+  -fx-background-color: #2c3e50; /* Consistent with dashboard-content-panel */
+}
+
+.tab-pane .tab-header-area {
+  -fx-background-color: #34495e; /* Darker background for the tab header area */
+  -fx-padding: 0 0 0 10px; /* Adjust padding as needed */
+}
+
+.tab-pane .tab {
+  -fx-background-color: #4a6072; /* Background for unselected tabs */
+  -fx-background-radius: 5px 5px 0 0;
+  -fx-border-color: #6c7a89;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5px 5px 0 0;
+  -fx-padding: 8px 15px;
+  -fx-alignment: CENTER;
+}
+
+.tab-pane .tab:selected {
+  -fx-background-color: #2c3e50; /* Background for selected tab, matching content panel */
+  -fx-border-color: #6c7a89;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5px 5px 0 0;
+  -fx-border-insets: 0 0 -1 0; /* Overlap border with content area */
+}
+
+.tab-pane .tab .tab-label {
+  -fx-text-fill: #ecf0f1; /* Light text for all tabs */
+  -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .tab-label {
+  -fx-text-fill: #ecf0f1; /* Ensure selected tab text remains light */
+}
+
+.tab-pane .tab:hover {
+  -fx-background-color: #5c7080; /* Slightly lighter on hover for unselected tabs */
+}
+
+.tab-pane .tab:selected:hover {
+  -fx-background-color: #2c3e50; /* Keep selected tab background consistent on hover */
+}

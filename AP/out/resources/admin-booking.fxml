@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekking.app.BookingController"> <!-- ADDED CONTROLLER -->
+    <content>
+        <VBox spacing="20.0" styleClass="dashboard-content-panel">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <!-- Search and New Booking -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="search-bar">
+                    <TextField promptText="%search.bookings.prompt" HBox.hgrow="ALWAYS" styleClass="form-input"/>
+                    <Button text="%search.button" styleClass="button-primary"/>
+                    <Button text="%new.booking.button" styleClass="login-button"/>
+                </HBox>
+
+                <!-- Filter Bookings -->
+                <VBox spacing="10" styleClass="card-panel">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="%filter.bookings.title" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="%status.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="statusComboBox" promptText="%all.status.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" /> <!-- ADDED fx:id -->
+                            <Label text="%from.date.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <DatePicker promptText="%date.format.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="%to.date.label" styleClass="form-label" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <DatePicker promptText="%date.format.prompt" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        </children>
+                    </GridPane>
+                </VBox>
+
+                <!-- Bookings Table -->
+                <TableView styleClass="table-view" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="%booking.id.column" prefWidth="80"/>
+                        <TableColumn text="%tourist.name.column" prefWidth="120"/>
+                        <TableColumn text="%attraction.column" prefWidth="120"/>
+                        <TableColumn text="%guide.column" prefWidth="100"/>
+                        <TableColumn text="%date.column" prefWidth="90"/>
+                        <TableColumn text="%duration.column" prefWidth="80"/>
+                        <TableColumn text="%total.cost.column" prefWidth="90"/>
+                        <TableColumn text="%status.column" prefWidth="80"/>
+                        <TableColumn text="%actions.column" prefWidth="100"/>
+                    </columns>
+                    <!-- Placeholder for table data -->
+                </TableView>
+
+                <!-- Quick Booking Form -->
+                <VBox spacing="10" styleClass="card-panel">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="%quick.booking.form.title" styleClass="section-title"/>
+                    <GridPane hgap="15.0" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="%select.tourist.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="selectTouristComboBox" promptText="%choose.tourist.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" /> <!-- ADDED fx:id -->
+                            <Label text="%select.attraction.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="selectAttractionComboBox" promptText="%choose.attraction.prompt" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" /> <!-- ADDED fx:id -->
+                            <Label text="%select.guide.label" styleClass="form-label" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="selectGuideComboBox" promptText="%choose.guide.prompt" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="1" /> <!-- ADDED fx:id -->
+
+                            <Label text="%start.date.label" styleClass="form-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <DatePicker promptText="%date.format.prompt" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label text="%group.size.label" styleClass="form-label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <TextField text="1" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label text="%special.notes.label" styleClass="form-label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                            <TextArea promptText="%special.notes.prompt" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="3" prefRowCount="3"/>
+                        </children>
+                    </GridPane>
+                    <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                        <Button text="%create.booking.button" styleClass="login-button"/>
+                        <Button text="%clear.button" styleClass="button-secondary"/>
+                    </HBox>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
